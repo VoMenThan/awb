@@ -1,0 +1,180 @@
+/* =================== HEADER ======================= */
+header {}
+
+/* =================== NAVIGATION ======================= */
+nav {
+    .menu-contact{
+        .icon-facebook{
+            @include setBackgroundIcon(30px, "../images/icon-facebook.svg");
+        }
+        .icon-twitter{
+            @include setBackgroundIcon(30px, "../images/icon-twitter.svg");
+        }
+        .icon-instagram{
+            @include setBackgroundIcon(30px, "../images/icon-instagram.svg");
+        }
+        .icon-youtube{
+            @include setBackgroundIcon(30px, "../images/icon-youtube.svg");
+        }
+        .list-social{
+            height: 30px;
+            .nav-item{
+                padding-right: 15px;
+                &:last-child{
+                    padding-right: 0;
+                }
+            }
+        }
+        .input-search{
+            padding-left: 40px;
+            padding-right: 10px;
+            width: 200px;
+            border-radius: 15px;
+            outline: none;
+            border: none;
+            background: url("../images/bg-search.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .btn-support-us{
+            border-radius: 0;
+            padding: 12px 25px;
+            border: 0;
+        }
+    }
+
+    .box-main-menu{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+/* =================== RESPONSIVE ======================= */
+
+
+/* 	================================================================
+	LARGE DEVICE
+	Large desktop 992px and up (>992px and <1200px)
+	================================================================== */
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    nav {
+        .site-logo{
+            img{
+                width: 150px;
+            }
+        }
+        .navbar-expand-lg {
+            .navbar-nav {
+                .nav-link{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 992px and down (<992px)
+	================================================================== */
+@media screen and (max-width: 992px) {
+    nav{
+        .navbar-nav {
+            .nav-item{
+                text-align: center;
+            }
+            .nav-link{
+                display: inline-block;
+            }
+        }
+        .navbar-toggler{
+            outline: none;
+        }
+        .box-main-menu{
+            padding: 0;
+        }
+        .navbar-collapse{
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 999;
+            background: rgba(255,255,255,.8);
+            width: 100%;
+        }
+    }
+}
+
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 768px and up (>768px and <992px)
+	================================================================== */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    nav {
+        .site-logo {
+            img {
+                width: 200px;
+            }
+        }
+    }
+}
+
+/* 	================================================================
+	MEDIUM DEVICE
+	Tablet 768px and down (<768px)
+	================================================================== */
+@media screen and (max-width: 768px) {
+    nav {
+        .site-logo {
+            img {
+                width: 200px;
+            }
+        }
+    }
+}
+
+/* 	================================================================
+	MEDIUM DEVICE
+	Tablet 767px and down (<767px)
+	================================================================== */
+@media screen and (max-width: 767px) {
+    nav{
+        .menu-contact{
+            .btn-support-us{
+                display: none;
+            }
+            .input-search{
+                display: none;
+            }
+            .btn-search-mb{
+                font-size: 20px;
+                color: $color-white;
+            }
+            .nav-link{
+                position: relative;
+                &:hover{
+                    .input-search{
+                        display: block;
+                        position: absolute;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 	================================================================
+	MOBILE DEVICE
+	Large mobile 425px and down (<425px)
+	================================================================== */
+@media screen and (max-width: 425px) {
+
+}
+
+/* 	================================================================
+	MOBILE DEVICE
+	Mobile 320px and down (<320px)
+	================================================================== */
+@media screen and (max-width: 320px) {
+
+}

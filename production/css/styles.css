@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700,700i,800|Rosario:400,400i,700,700i&amp;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400,400i,700,700i");
+/*define*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+p { margin-bottom: 10px; }
+
+a, a:hover { text-decoration: none; color: #343434; }
+
+a:hover, a.active { cursor: pointer; }
+
+* { box-sizing: border-box; outline: none; font-family: "Open Sans", sans-serif; font-size: 18px; }
+
+ul { padding: 0; margin: 0; }
+
+ul li { list-style-type: none; }
+
+html { scroll-behavior: smooth; }
+
+@media (min-width: 1200px) { .container { max-width: 1200px; } }
+/* =================== HEADER ======================= */
+/* =================== NAVIGATION ======================= */
+nav .menu-contact .icon-facebook { width: 30px; height: 30px; background: url("../images/icon-facebook.svg") no-repeat center; display: inline-block; background-size: 100%; }
+nav .menu-contact .icon-twitter { width: 30px; height: 30px; background: url("../images/icon-twitter.svg") no-repeat center; display: inline-block; background-size: 100%; }
+nav .menu-contact .icon-instagram { width: 30px; height: 30px; background: url("../images/icon-instagram.svg") no-repeat center; display: inline-block; background-size: 100%; }
+nav .menu-contact .icon-youtube { width: 30px; height: 30px; background: url("../images/icon-youtube.svg") no-repeat center; display: inline-block; background-size: 100%; }
+nav .menu-contact .list-social { height: 30px; }
+nav .menu-contact .list-social .nav-item { padding-right: 15px; }
+nav .menu-contact .list-social .nav-item:last-child { padding-right: 0; }
+nav .menu-contact .input-search { padding-left: 40px; padding-right: 10px; width: 200px; border-radius: 15px; outline: none; border: none; background: url("../images/bg-search.png") no-repeat; background-size: 100% 100%; }
+nav .menu-contact .btn-support-us { border-radius: 0; padding: 12px 25px; border: 0; }
+nav .box-main-menu { padding-top: 15px; padding-bottom: 15px; }
+
+/* =================== RESPONSIVE ======================= */
+/* 	================================================================
+	LARGE DEVICE
+	Large desktop 992px and up (>992px and <1200px)
+	================================================================== */
+@media screen and (min-width: 992px) and (max-width: 1200px) { nav .site-logo img { width: 150px; }
+  nav .navbar-expand-lg .navbar-nav .nav-link { font-size: 16px; } }
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 992px and down (<992px)
+	================================================================== */
+@media screen and (max-width: 992px) { nav .navbar-nav .nav-item { text-align: center; }
+  nav .navbar-nav .nav-link { display: inline-block; }
+  nav .navbar-toggler { outline: none; }
+  nav .box-main-menu { padding: 0; }
+  nav .navbar-collapse { position: absolute; top: 100%; left: 0; z-index: 999; background: rgba(255, 255, 255, 0.8); width: 100%; } }
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 768px and up (>768px and <992px)
+	================================================================== */
+@media screen and (min-width: 768px) and (max-width: 992px) { nav .site-logo img { width: 200px; } }
+/* 	================================================================
+	MEDIUM DEVICE
+	Tablet 768px and down (<768px)
+	================================================================== */
+@media screen and (max-width: 768px) { nav .site-logo img { width: 200px; } }
+/* 	================================================================
+	MEDIUM DEVICE
+	Tablet 767px and down (<767px)
+	================================================================== */
+@media screen and (max-width: 767px) { nav .menu-contact .btn-support-us { display: none; }
+  nav .menu-contact .input-search { display: none; }
+  nav .menu-contact .btn-search-mb { font-size: 20px; color: #ffffff; }
+  nav .menu-contact .nav-link { position: relative; }
+  nav .menu-contact .nav-link:hover .input-search { display: block; position: absolute; right: 0; } }
+/* 	================================================================
+	MOBILE DEVICE
+	Large mobile 425px and down (<425px)
+	================================================================== */
+/* 	================================================================
+	MOBILE DEVICE
+	Mobile 320px and down (<320px)
+	================================================================== */
+section.slider-homepage .box-info-slider { position: absolute; top: 50%; right: 100px; width: 30%; -webkit-transform: translate(0, -50%); -moz-transform: translate(0, -50%); -ms-transform: translate(0, -50%); transform: translate(0, -50%); z-index: 99; color: #ffffff; text-align: right; }
+section.slider-homepage .box-info-slider h2 { font-family: "Rosario", sans-serif; font-size: 24px; padding-bottom: 10px; text-align: left; }
+section.slider-homepage .box-info-slider p { text-align: left; }
+section.slider-homepage .btn-read-more { padding: 10px 20px; font-size: 24px; font-weight: bold; }
+
+.about-us { padding-top: 30px; padding-bottom: 60px; }
+.about-us .title-section { padding-bottom: 30px; }
+
+.how-we-work { background: linear-gradient(180deg, #2F80ED 24.44%, #13A2F2 100%); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); padding-top: 25px; padding-bottom: 30px; color: #ffffff; }
+.how-we-work .title-section { padding-bottom: 30px; }
+.how-we-work .box-how-we-work { text-align: center; }
+.how-we-work .box-how-we-work img { margin-bottom: 15px; }
+.how-we-work .box-how-we-work h3 { padding-bottom: 30px; }
+.how-we-work .box-how-we-work p { text-align: left; }
+
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 992px and down (<992px)
+	================================================================== */
+@media screen and (max-width: 992px) { section.slider-homepage .box-info-slider { width: 80%; } }
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 425px and down (<425px)
+	================================================================== */
+@media screen and (max-width: 425px) { section.slider-homepage .carousel-main .owl-item img { height: 80vh; width: auto; }
+  section.slider-homepage .box-info-slider { width: 90%; right: auto; left: 5%; }
+  .how-we-work .box-how-we-work { padding-bottom: 30px; }
+  .how-we-work .box-how-we-work h3 { padding-bottom: 10px; font-size: 24px; } }
+section.section-project { padding-top: 50px; }
+section.section-project .item-project { padding: 5px; position: relative; }
+section.section-project .title-section { padding-bottom: 30px; }
+section.section-project .box-info-project { position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); -moz-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: 99; color: #ffffff; width: 80%; text-align: center; }
+section.section-project .box-info-project h3 { font-size: 36px; font-family: "Rosario", sans-serif; }
+section.section-project .box-info-project .btn-read-more { background: transparent; color: #ffffff; border: 1px solid #ffffff; outline: none; font-size: 24px; border-radius: 0; }
+
+@media screen and (max-width: 425px) { section.section-project .item-project img { width: 100%; }
+  section.section-project .box-info-project h3 { font-size: 24px; }
+  section.section-project .box-info-project .btn-read-more { font-size: 18px; padding: 5px 10px; } }
+section.section-support { background: linear-gradient(180deg, #2F80ED 24.44%, #13A2F2 100%); box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); color: #ffffff; padding-top: 50px; padding-bottom: 30px; }
+section.section-support .title-section { padding-bottom: 30px; }
+section.section-support .btn-orange { width: 100%; }
+section.section-support .btn-white { width: 100%; }
+
+section.section-contact-us { background: url("../images/bg-contact-us.jpg") no-repeat; background-size: cover; color: #ffffff; padding-top: 50px; padding-bottom: 30px; }
+section.section-contact-us a { color: #ffffff; }
+section.section-contact-us h5 { margin-bottom: 30px; font-size: 24px; }
+section.section-contact-us input, section.section-contact-us textarea { margin-bottom: 10px; padding: 5px 10px; }
+section.section-contact-us .title-section { margin-bottom: 50px; }
+section.section-contact-us .input-name { width: 49%; display: inline-block; }
+section.section-contact-us .input-mail { width: 50%; display: inline-block; }
+section.section-contact-us .input-subject { width: 100%; }
+section.section-contact-us .input-message { width: 100%; resize: none; }
+section.section-contact-us .btn-orange { width: 100%; }
+
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 425px and down (<425px)
+	================================================================== */
+@media screen and (max-width: 425px) { section.section-contact-us .input-name { width: 100%; }
+  section.section-contact-us .input-mail { width: 100%; } }
+.project-page h1 { font-size: 36px; font-weight: bold; font-family: "Rosario", sans-serif; padding-bottom: 30px; }
+.project-page .content-project p { font-family: "Roboto", sans-serif; }
+
+section.section-post { padding-top: 50px; padding-bottom: 50px; }
+section.section-post .title-section { padding-bottom: 30px; }
+section.section-post .title-post { font-size: 24px; font-family: "Rosario", sans-serif; padding-bottom: 30px; }
+section.section-post .bd-bottom { width: 50px; border-bottom: 2px solid #828282; display: block; margin: auto; margin-bottom: 30px; }
+section.section-post .description { color: #333333; padding-bottom: 50px; }
+section.section-post .btn-transparent-black { background: transparent; color: #828282; border: 1px solid #4F4F4F; border-radius: 0; }
+section.section-post .item-post { border-bottom: 1px solid #828282; padding-bottom: 30px; margin-bottom: 30px; }
+section.section-post .item-post:last-child { border: none; }
+
+/* ======================FOOTER============== */
+footer .box-menu-footer { padding: 20px; }
+footer .box-menu-footer a { font-family: "Rosario", sans-serif; }
+footer .copyright-footer { color: #F69E1B; padding: 20px; }
+
+/* =================== RESPONSIVE ======================= */
+/* 	================================================================
+	EXTRA LARGE DEVICE
+	Large desktop 1200px and up (1200px)
+	================================================================== */
+/* 	================================================================
+	LARGE DEVICE
+	Large desktop 992px and up (>992px and <1200px)
+	================================================================== */
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 768px and up (>768px and <992px)
+	================================================================== */
+/* 	================================================================
+	MEDIUM DEVICE
+	Large tablet 992px and down (<992px)
+	================================================================== */
+/* 	================================================================
+	MEDIUM DEVICE
+	Tablet 768px down (<768px)
+	================================================================== */
+/* 	================================================================
+	EXTRA LARGE DEVICE
+	Large desktop 1200px and down (1200px)
+	================================================================== */
+/* 	================================================================
+	SMALL DEVICE
+	Large tablet 576px and up (>576px and <768px)
+	================================================================== */
+/* 	================================================================
+	EXTRA SMALL DEVICE
+	Large mobile 425px and up (>425px and <576px)
+	================================================================== */
+/* 	================================================================
+	MOBILE DEVICE
+	Large mobile 425px and down (<425px)
+	================================================================== */
+.bg-blue-black { background: #273036; }
+
+.btn-orange { background: #F69E1B; color: #ffffff; border-radius: 0; }
+
+.btn-transparent { background: transparent; color: #ffffff; border: 1px solid #ffffff; border-radius: 0; }
+
+.btn-white { background: #ffffff; color: #2988EF; border-radius: 0; }
+
+.title-section { font-size: 24px; font-family: "Rosario", sans-serif; }
+
+.content-project h2 { font-size: 24px; font-family: "Rosario", sans-serif; }
+
+/*# sourceMappingURL=styles.css.map */

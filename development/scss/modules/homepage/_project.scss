@@ -1,0 +1,53 @@
+section.section-project{
+    padding-top: 50px;
+  .item-project{
+      padding: 5px;
+      position: relative;
+  }
+    .title-section{
+        padding-bottom: 30px;
+    }
+
+    .box-info-project{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include translate(-50%, -50%);
+        z-index: 99;
+        color: $color-white;
+        width: 80%;
+        text-align: center;
+        h3{
+            font-size: 36px;
+            font-family: $font-rosario;
+        }
+        .btn-read-more{
+            background: transparent;
+            color: $color-white;
+            border: 1px solid $color-white;
+            outline: none;
+            font-size: 24px;
+            border-radius: 0
+        }
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    section.section-project {
+        .item-project {
+            img {
+                width: 100%;
+            }
+        }
+        .box-info-project {
+            h3{
+                font-size: 24px;
+            }
+            .btn-read-more{
+                font-size: 18px;
+                padding: 5px 10px;
+            }
+        }
+    }
+}

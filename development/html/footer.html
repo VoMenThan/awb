@@ -1,0 +1,154 @@
+<!-- FOOTER -->
+<footer>
+    <div class="container-fluid d-lg-block d-none">
+        <div class="container">
+            <div class="box-menu-footer text-center d-flex justify-content-around">
+                <a href="">ABOUT US</a>
+                <a href="">HOW WE WORK</a>
+                <a href="">PROJECTS</a>
+                <a href="">AWB GLOBAL</a>
+                <a href="">POST</a>
+                <a href="">JOIN US</a>
+                <a href="">CONTACT US</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-blue-black">
+        <div class="row">
+            <div class="col-lg-12">
+                 <div class="copyright-footer text-center">© 2017 by Agriculture without Border</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/video.js"></script>
+<script src="js/styles.min.js"></script>
+<script>
+/*============ slide news =================*/
+$(document).ready(function() {
+
+    $('.carousel-main').owlCarousel({
+        loop: true,
+        margin: 0,
+        nav: false,
+        dots: false,
+        autoplay: false,
+        autoplayTimeout: 5000,
+        smartSpeed:450,
+        navText: ['<i class="btn-prev-slide"></i>', '<i class="btn-next-slide"></i>'],
+        responsive: {
+            0: {
+                items: 1,
+                dots: false
+            },
+            768: {
+                items: 1,
+                dots: false
+            },
+            1024: {
+                items: 1
+            }
+        }
+    });
+
+
+
+});
+
+/*============auto open modal=================*/
+$('#modal-notmiss').modal({
+    autoOpen: true
+});
+
+
+
+/*============ custom scroll =================*/
+
+(function($) {
+    $(window).on("load", function() {
+        $(".content-scroll").mCustomScrollbar({ theme: "3d" });
+    });
+})(jQuery);
+
+/*============ end custom scroll =================*/
+
+
+function sticky_relocate() {
+    var window_top = $(window).scrollTop();
+    var div_top_menu = $('#sticky-menu-anchor').offset().top;
+
+    if (window_top >= div_top_menu) {
+        $('#sticky-menu').addClass('stick');
+    }
+    else if(window_top < (div_top_menu + 120)){
+        $('#sticky-menu').removeClass('stick');
+    }
+};
+
+function toggle_obj(btn_click, box_toggle) {
+    $(btn_click).click(function () {
+        $(box_toggle).toggleClass("show-obj");
+        $(btn_click).toggleClass("active");
+
+        if (btn_click == ".btn-toggle-menu"){
+            $("body").toggleClass("overflow-hidden");
+            $(".btn-toggle-search").toggleClass("d-none");
+
+        }
+    });
+}
+
+function get_attr(){
+    $(".item-menu").click(function () {
+        var val = $(this).text();
+        $(".logo-envzone-mobile").addClass("d-hidden");
+        $("nav .title-category").addClass("active").text(val);
+        $("nav .btn-hide-submenu").addClass("active");
+    });
+}
+
+function select_next_element(){
+    $(".nav-link").click(function () {
+        $(this).next().addClass("show-submenu");
+    });
+
+    $(".btn-hide-submenu").click(function () {
+        $(".sub-menu").removeClass("show-submenu");
+        $(".logo-envzone-mobile").removeClass("d-hidden");
+        $("nav .title-category").removeClass("active");
+        $("nav .btn-hide-submenu").removeClass("active");
+    });
+
+    //CLOSE MENU MOBILE
+
+    $(".close-menu-mb").click(function () {
+        $(".sub-menu").removeClass("show-submenu");
+        $(".logo-envzone-mobile").removeClass("d-hidden");
+        $("nav .title-category").removeClass("active");
+        $("nav .btn-hide-submenu").removeClass("active");
+    });
+
+}
+
+$(function () {
+    toggle_obj(".btn-toggle-menu", "#menuBarMobile");
+    toggle_obj(".btn-toggle-search", "#detailBoxSearch");
+    toggle_obj(".btn-search-pc", "#detailBoxSearch");
+    get_attr();
+    select_next_element();
+});
+
+
+
+</script>
+</body>
+
+</html>

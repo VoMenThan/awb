@@ -1,0 +1,31 @@
+.bg-blue-black{
+    background: $color-blue-black;
+}
+.btn-orange{
+    background: $color-orange;
+    color: $color-white;
+    border-radius: 0;
+}
+
+.btn-transparent{
+    background: transparent;
+    color: $color-white;
+    border: 1px solid $color-white;
+    border-radius: 0;
+}
+.btn-white{
+    background: $color-white;
+    color: #2988EF;
+    border-radius: 0;
+}
+.title-section{
+    font-size: 24px;
+    font-family: $font-rosario;
+}
+
+.content-project{
+    h2{
+        font-size: 24px;
+        font-family: $font-rosario;
+    }
+}
