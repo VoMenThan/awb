@@ -22,6 +22,8 @@
     <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <!-- VIDEO JS CSS -->
     <link href="css/video-js.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css"/>
     <!-- Custom styles for this template -->
     <link href="css/styles.css" rel="stylesheet">
 </head>
@@ -197,6 +199,7 @@
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/video.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
 <script src="js/styles.min.js"></script>
 <script>
 /*============ slide news =================*/
@@ -226,6 +229,34 @@ $(document).ready(function() {
         }
     });
 
+
+    /*slider product detail*/
+    $(".carousel-products-detail").owlCarousel({
+        items:1,
+        margin:0,
+        stagePadding: 0,
+        smartSpeed: 1000,
+        loop: false,
+        nav: false,
+        dots: false,
+        slideBy: 1,
+        URLhashListener:true,
+        autoplayHoverPause:true,
+        startPosition: 'URLHash'
+    });
+
+    $(".box-icon-mini").owlCarousel({
+        center: false,
+        items:4,
+        margin:0,
+        stagePadding: 0,
+        smartSpeed: 1000,
+        loop: false,
+        nav: true,
+        dots: false,
+        slideBy: 1
+    });
+    /* end slider product detail*/
 
 
 });

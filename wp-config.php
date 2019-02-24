@@ -37,6 +37,13 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/** Add here*/
+define('FS_METHOD','direct');
+define("FTP_HOST", "localhost");
+define("FTP_USER", “awb-admin”);
+define("FTP_PASS", “1234567890”);
+/** To here*/
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *

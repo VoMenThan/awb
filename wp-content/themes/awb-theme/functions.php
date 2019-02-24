@@ -21,10 +21,10 @@ function mt_awb_register_js(){
 	wp_enqueue_script('mt_awb_popper_min', $jsUrl.'popper.min.js', array(), '1.0', true);
 	wp_enqueue_script('mt_awb_bootstrap', $jsUrl.'bootstrap.min.js', array(), '1.0', true);
 	wp_enqueue_script('mt_awb_owl_carousel', $jsUrl.'owl.carousel.min.js', array(), '1.0', true);
-	wp_enqueue_script('mt_awb_jquery_matchheight', $jsUrl.'jquery.matchHeight-min.js', array(), '1.0', true);
 	wp_enqueue_script('mt_awb_jquery_mCustomScrollbar_concat_min', $jsUrl.'jquery.mCustomScrollbar.concat.min.js', array(), '1.0', true);
 	wp_enqueue_script('mt_awb_wowjs', $jsUrl.'wow.min.js', array(), '1.0', true);
 	wp_enqueue_script('mt_awb_videojs', $jsUrl.'video.js', array(), '1.0', true);
+	wp_enqueue_script('mt_awb_jquery_fancybox', $jsUrl.'jquery.fancybox.min.js', array(), '1.0', true);
 }
 
 /*======================================================================================================
@@ -43,7 +43,8 @@ function mt_awb_register_style(){
     wp_enqueue_style('mt_awb_animate', $cssUrl.'animate.css', array(), '1.0');
     wp_enqueue_style('mt_awb_jquery_mCustomScrollbar_min', $cssUrl.'jquery.mCustomScrollbar.min.css', array(), '1.0');
     wp_enqueue_style('mt_awb_videojs', $cssUrl.'video-js.css', array(), '1.0');
-    wp_enqueue_style('mt_awb_styles', $cssUrl.'styles.css', array(), '2.0');
+    wp_enqueue_style('mt_awb_jquery_fancybox', $cssUrl.'jquery.fancybox.min.css', array(), '1.0');
+    wp_enqueue_style('mt_awb_styles', $cssUrl.'styles.css', array(), '3.0');
 }
 
 add_filter('show_admin_bar', '__return_false');

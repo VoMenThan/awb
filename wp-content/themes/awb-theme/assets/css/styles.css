@@ -55,7 +55,7 @@ nav .box-main-menu { padding-top: 15px; padding-bottom: 15px; }
   nav .navbar-nav .nav-link { display: inline-block; }
   nav .navbar-toggler { outline: none; }
   nav .box-main-menu { padding: 0; }
-  nav .navbar-collapse { position: absolute; top: 100%; left: 0; z-index: 999; background: rgba(255, 255, 255, 0.8); width: 100%; } }
+  nav .navbar-collapse { position: absolute; top: 100%; left: 0; z-index: 999; background: #ffffff; width: 100%; } }
 /* 	================================================================
 	MEDIUM DEVICE
 	Large tablet 768px and up (>768px and <992px)
@@ -208,5 +208,16 @@ footer .copyright-footer { color: #F69E1B; padding: 20px; }
 .title-section { font-size: 24px; font-family: "Rosario", sans-serif; }
 
 .content-project h2 { font-size: 24px; font-family: "Rosario", sans-serif; }
+
+.box-icon-mini { width: 90%; margin: auto; }
+.box-icon-mini .owl-stage-outer { margin-top: 10px; }
+.box-icon-mini .owl-stage-outer .owl-item { padding: 0 5px; }
+.box-icon-mini .owl-nav { position: relative; }
+.box-icon-mini .owl-nav button span { font-size: 32px; color: #E0E0E0; }
+.box-icon-mini .owl-nav button.disabled { display: none; }
+.box-icon-mini .owl-nav button.owl-prev { position: absolute; left: -20px; top: -65px; }
+.box-icon-mini .owl-nav button.owl-next { position: absolute; right: -20px; top: -65px; }
+.box-icon-mini .owl-nav [class*=owl-]:hover { background: transparent; outline: none; }
+.box-icon-mini .owl-nav [class*=owl-]:focus { outline: none; }
 
 /*# sourceMappingURL=styles.css.map */

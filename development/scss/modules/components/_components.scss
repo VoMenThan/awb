@@ -29,3 +29,46 @@
         font-family: $font-rosario;
     }
 }
+
+.box-icon-mini {
+    width: 90%;
+    margin: auto;
+    .owl-stage-outer{
+        margin-top: 10px;
+        .owl-item{
+            padding: 0 5px;
+        }
+    }
+    .owl-nav{
+        position: relative;
+        button{
+            span{
+                font-size: 32px;
+                color: #E0E0E0;
+            }
+            &.disabled{
+                display: none;
+            }
+        }
+        button.owl-prev{
+            position: absolute;
+            left: -20px;
+            top: -65px;
+        }
+        button.owl-next{
+            position: absolute;
+            right: -20px;
+            top: -65px;
+        }
+        [class*=owl-]{
+            &:hover{
+                background: transparent;
+                outline: none;
+            }
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+}
