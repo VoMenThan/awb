@@ -35,4 +35,30 @@ section.section-post{
             border: none;
         }
     }
+
+    .page-numbers{
+        border: 1px solid #BDBDBD;
+        padding: 10px 18px;
+        margin: 0 15px;
+        color: #BDBDBD;
+        &.current{
+            color: #4F4F4F;
+            border-color: #4F4F4F;
+        }
+    }
+}
+
+
+
+section.search-page{
+    .title-post{
+        a{
+            font-size: 24px;
+            font-weight: bold;
+            &:hover{
+                cursor: pointer;
+                opacity: .8;
+            }
+        }
+    }
 }

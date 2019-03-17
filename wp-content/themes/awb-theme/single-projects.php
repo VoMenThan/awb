@@ -1,7 +1,7 @@
 <?php
 global $wp_query;
 $args = array(
-    'posts_per_page' => 6,
+    'posts_per_page' => -1,
     'offset'=> 0,
     'post_type' => 'projects',
     'orderby' => 'id',

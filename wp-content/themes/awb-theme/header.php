@@ -60,8 +60,12 @@
                             </li>
                             <li class="nav-item">
                                 <div class="nav-link" href="#">
-                                    <input class="input-search" type="text" placeholder="search">
-                                    <a href="#" class="btn-search-mb"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                    <form action="<?php echo home_url()?>" method="get">
+                                        <input class="input-search" name="s" type="text" placeholder="search">
+                                        <a onclick="document.getElementById('search-page').submit()" href="#" class="btn-search-mb">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </a>
+                                    </form>
                                 </div>
                             </li>
                             <li class="nav-item">
@@ -90,12 +94,12 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbarBanVien">
                         <ul class="navbar-nav main-menu">
                             <li class="nav-item active">
-                                <a href="#about-us" class="nav-link waves-effect waves-light">
+                                <a href="<?php echo home_url()."/about-us";?>" class="nav-link waves-effect waves-light">
                                     ABOUT US
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#how-we-work" class="nav-link waves-effect waves-light">
+                                <a href="<?php echo home_url()."/how-we-work";?>" class="nav-link waves-effect waves-light">
                                     HOW WE WORK
                                 </a>
                             </li>

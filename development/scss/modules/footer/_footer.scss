@@ -11,9 +11,12 @@ footer {
         color: $color-orange;
         padding: 20px;
     }
+    .box-menu-footer{
+        a.active{
+            font-weight: bold;
+        }
+    }
 }
-
-
 
 
 /* =================== RESPONSIVE ======================= */

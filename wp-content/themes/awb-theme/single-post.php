@@ -1,14 +1,4 @@
 <?php
-global $wp_query;
-
-$args = array(
-    'posts_per_page' => 5,
-    'offset'=> 0,
-    'post_type' => 'post',
-    'orderby' => 'id',
-    'order' =>'desc'
-);
-$news_all = get_posts( $args );
 
 get_header();
 ?>
@@ -73,22 +63,31 @@ get_header();
                     </div>
                 </div>
             </div>
-            <?php foreach ($news_all as $item):?>
+            <?php
+            $array = array(
+                'post_type' => 'post'
+            );
+            $the_query = new WP_Query( $array );
+            $id_post = $post->ID;
+            if ($the_query->have_posts()):
+                while ($the_query->have_posts()):
+                    $the_query->the_post();
+                    if (get_the_ID() == $id_post) continue;
+                    get_template_part('template-parts/content', 'post');
+                endwhile;
 
-                <div class="row item-post">
-                    <div class="col-md-6">
-                        <img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($item->ID);?>" alt="">
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <h2 class="title-post"><?php echo $item->post_title;?></h2>
-                        <span class="bd-bottom"></span>
-                        <p class="description">
-                            <?php echo $item->post_excerpt;?>
-                        </p>
-                        <a href="<?php echo home_url()."/".$item->post_name;?>" class="btn btn-transparent-black">READ MORE</a>
-                    </div>
-                </div>
-            <?php endforeach;?>
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'envzone' ),
+                    'next_text'          => __( 'Next page', 'envzone' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( '', 'envzone' ) . ' </span>',
+                ) );
+
+            else:
+                ?>
+                <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+            <?php
+            endif;
+            ?>
 
         </div>
     </section>

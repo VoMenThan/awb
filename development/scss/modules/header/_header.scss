@@ -46,6 +46,15 @@ nav {
         padding-top: 15px;
         padding-bottom: 15px;
     }
+    .main-menu{
+        .nav-link{
+            .nav-link{
+                &.active{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
 }
 
 /* =================== RESPONSIVE ======================= */
