@@ -26,6 +26,8 @@
    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
     <?php wp_head();?>
 
 </head>

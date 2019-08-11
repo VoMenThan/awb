@@ -173,38 +173,65 @@ get_header();?>
                 <?php
 
                 $result = new stdClass();
-
-                if(isset($_POST) and count($_POST) > 1){
-                    $data = $_POST;
-
-                    $post_type = 'contact_us';
-                    $post_id = wp_insert_post(
-                        array(  'post_title'    => $data['mail_contact'],
-                            'post_status'   => 'publish',
-                            'post_type'     => $post_type));
-
-
-                    /*write if in database*/
-                    if ($post_id) {
-                        $fs = array(
-                            'name_contact',
-                            'subject_contact',
-                            'messages_contact'
+                // Checks if form has been submitted
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    function post_captcha($user_response) {
+                        $fields_string = '';
+                        $fields = array(
+                            'secret' => '6LdfebIUAAAAACNiNjtWPEs0--absZpGcmer_fO3',
+                            'response' => $user_response
                         );
+                        foreach($fields as $key=>$value)
+                            $fields_string .= $key . '=' . $value . '&';
+                        $fields_string = rtrim($fields_string, '&');
 
-                        foreach ($fs as $k) {
-                            if (isset($_POST[$k])) {
-                                update_post_meta($post_id, $k, $_POST[$k]);
-                            }
-                        }
-                        $result->st = 1;
+                        $ch = curl_init();
+                        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+                        curl_setopt($ch, CURLOPT_POST, count($fields));
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
 
-                    } else {
-                        $result->st = 0;
+                        $result = curl_exec($ch);
+                        curl_close($ch);
+
+                        return json_decode($result, true);
                     }
-                }
-                else{
-                    $result->form = 1;
+
+                    // Call the function post_captcha
+                    $res = post_captcha($_POST['g-recaptcha-response']);
+
+                    if(count($_POST) > 1 and $res['success']){
+                        $data = $_POST;
+
+                        $post_type = 'contact_us';
+                        $post_id = wp_insert_post(
+                            array(  'post_title'    => $data['mail_contact'],
+                                'post_status'   => 'publish',
+                                'post_type'     => $post_type));
+
+
+                        /*write if in database*/
+                        if ($post_id) {
+                            $fs = array(
+                                'name_contact',
+                                'subject_contact',
+                                'messages_contact'
+                            );
+
+                            foreach ($fs as $k) {
+                                if (isset($_POST[$k])) {
+                                    update_post_meta($post_id, $k, $_POST[$k]);
+                                }
+                            }
+                            $result->st = 1;
+
+                        } else {
+                            $result->st = 0;
+                        }
+                    }
+                    else{
+                        $result->form = 1;
+                    }
                 }
 
                 ?>
@@ -215,11 +242,21 @@ get_header();?>
                         echo '<h5>Contact successfully!</h5>';
                     else:?>
                         <form id="form-contact" method="post" action="#contact-us">
-                            <input required class="input-name" name="name_contact" type="text" placeholder="Name">
-                            <input required class="input-mail" name="mail_contact" type="email" placeholder="Mail">
-                            <input required class="input-subject" name="subject_contact" type="text" placeholder="Subject">
-                            <textarea required class="input-message" name="messages_contact" placeholder="Messages" cols="30" rows="10"></textarea>
-                            <button type="submit" class="btn btn-orange">SEND</button>
+                            <input required class="input-name" name="name_contact" value="<?php echo $_POST['name_contact'];?>" type="text" placeholder="Name">
+                            <input required class="input-mail" name="mail_contact" value="<?php echo $_POST['mail_contact'];?>" type="email" placeholder="Mail">
+                            <input required class="input-subject" name="subject_contact" value="<?php echo $_POST['subject_contact'];?>" type="text" placeholder="Subject">
+                            <textarea required class="input-message" name="messages_contact" placeholder="Messages" cols="30" rows="10"><?php echo $_POST['messages_contact'];?></textarea>
+                            <div class="g-recaptcha" data-sitekey="6LdfebIUAAAAAN6N3CeDKBg9i4Ebk2N1J7a4p3H7"></div>
+                            <?php
+                                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                                    if (!$res['success']) {
+                                        // What happens when the CAPTCHA wasn't checked
+                                        echo '<p style="color: red;">Please make sure you check the security CAPTCHA box.</p><br>';
+                                    }
+                                }
+                            ?>
+                            <div id="capcha_key"></div>
+                            <button type="submit" class="btn btn-orange" style="margin-top: 15px;">SEND</button>
                         </form>
 
                     <?php endif;?>
